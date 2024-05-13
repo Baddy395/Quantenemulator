@@ -1,0 +1,17 @@
+.algorithmenZone {
+    text-align: center;
+    border: solid;
+    margin-bottom: 10px;
+    border-width: thin;
+}
+
+.algorithmen {
+    height: 20px;
+    width: 50px;
+    text-align: center;
+    display: inline-block;
+    cursor: move;
+    font-size: 13px;
+    margin: 5px;
+    color: whitesmoke;
+}

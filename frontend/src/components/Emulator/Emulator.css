@@ -1,0 +1,117 @@
+.content {
+    display: grid;
+    grid: 
+    "others codeText"
+    /76% 24%;
+    gap: 0px;
+}
+
+.elemente {
+    width: 1300px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 5px;
+    font-size: 12px;
+
+}
+
+.codeText {
+    width: 350px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 5px;
+    font-size: 12px;
+    
+
+}
+
+.left {
+    grid-area: others;
+}
+
+.right {
+    grid-area: codeText;
+}
+
+body {
+    background-image: url(../../assets/background2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.widget {
+    display: inline-flex;
+    width: 50px;
+    margin: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 6px;
+    place-content: center;
+}
+
+.quantenbitContainer {
+    display: grid;
+    grid: 
+    "widgets quantenbit"
+    /14% 86%;
+    gap: 0px;
+    text-align: center;
+}
+.buttonWidgets {
+    font-size: 6px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.quantengatter {
+    grid-area: widgets;
+    
+}
+
+.quantenbits {
+    grid-area: quantenbit;
+}
+
+.dropZoneForGatter {
+    text-align: right;
+    border: solid;
+    margin-bottom: 10px;
+    border-width: thin;
+}
+
+.dropped-widget {
+    height: 20px;
+    width: 65px;
+    text-align: right;
+    display: inline-block;
+    cursor: move;
+    font-size: 13px;
+    margin: 5px;
+    color: whitesmoke;
+   
+    
+    
+    
+}
+
+p {
+    font-size: 12px;
+
+}

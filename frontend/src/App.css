@@ -1,0 +1,29 @@
+.header {
+    height: 50px;
+    place-items: center;
+    display: grid;
+    grid: 
+    "name links"
+    /60% 40%;
+    gap: 0px;
+}
+
+.labelHeader {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.normalLink {
+    display: inline;
+}
+
+.currentLink {
+    display: inline;
+    background-color: darkgrey;
+}
+
+hr {
+    width: 85%;
+}
