@@ -154,7 +154,7 @@ const Algorithmen = () => {
             <br></br>
             <div className="quantenbitContainer">
               <div className="quantengatter">
-                Quantengatter
+                Algorithmen
                 <div>
                   <div>
                     <button onClick={() => onClickEPR()}>EPR - Paar</button>
