@@ -250,180 +250,184 @@ const Emulator = () => {
         </div>
       </div>
       <hr></hr>
-      <div className="content">
-        <div className="left">
-          <div className="elemente">
-            <div>
-              Hier befinden sich die Quantengatter. Diese können per drag and
-              drop in die Markierungen gezogen werden.<br></br>H = Hadamard
-              Gatter<br></br>X = Pauli - X - Gatter<br></br>CNOT bzw. CX =
-              Controlled Not Gatter (C-CX = Steuerqubit)
-              <br></br>CCNOT bzw. CCX = Controlled Controlled Not Gatter (C-CCX
-              = Steuerqubits)<br></br>Z = Pauli - Z - Gatter<br></br>CZ =
-              Controlled Z Gatter (C-CZ = Steuerqubit)<br></br>
-              CCZ = Controlled Controlled Z Gatter (C-CCZ = Steuerqubits)
-            </div>
-            <br></br>
-            <hr></hr>
-            <br></br>
-            <div className="quantenbitContainer">
-              <div className="quantengatter">
-                Quantengatter
-                <div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "H")}
-                  >
-                    H
+      <div>
+      <div className="elementeTop">
+                  <div>
+                    Hier befinden sich die Quantengatter. Diese können per drag and
+                    drop in die Markierungen gezogen werden.<br></br>H = Hadamard
+                    Gatter<br></br>X = Pauli - X - Gatter<br></br>CNOT bzw. CX =
+                    Controlled Not Gatter (C-CX = Steuerqubit)
+                    <br></br>CCNOT bzw. CCX = Controlled Controlled Not Gatter (C-CCX
+                    = Steuerqubits)<br></br>Z = Pauli - Z - Gatter<br></br>CZ =
+                    Controlled Z Gatter (C-CZ = Steuerqubit)<br></br>
+                    CCZ = Controlled Controlled Z Gatter (C-CCZ = Steuerqubits)
                   </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "X")}
-                  >
-                    X
-                  </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "CX")}
-                  >
-                    CX
-                  </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "CCX")}
-                  >
-                    CCX
-                  </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "Z")}
-                  >
-                    Z
-                  </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "CZ")}
-                  >
-                    CZ
-                  </div>
-                  <div
-                    className="widget"
-                    draggable
-                    onDragStart={(e) => handleOnDrag(e, "CCZ")}
-                  >
-                    CCZ
-                  </div>
-                </div>
-              </div>
-              <div className="quantenbits">
-                {quantenbits.map((quantenbit, index) => (
-                  <div key={quantenbit.id}>
-                    <div
-                      className="dropZoneForGatter"
-                      onDrop={(event) => handleOnDrop(event, index)}
-                      onDragOver={handleDragOver}
-                    >
-                      {quantenbit.id !== 1 && (
-                        <button
-                          onClick={() => {
-                            handleDeleteQuantenbit(quantenbit.id);
-                            reset();
-                          }}
+                  <br></br>
+                  <hr></hr>
+                  <br></br>
+                  <div className="quantenbitContainer">
+                    <div className="quantengatter">
+                      Quantengatter
+                      <div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "H")}
+                        >
+                          H
+                        </div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "X")}
                         >
                           X
-                        </button>
-                      )}
-                      Quantenbit {index}
-                      {quantenbit.widgets.map((widget, index) => (
+                        </div>
                         <div
-                          className="dropped-widget"
-                          key={index}
+                          className="widget"
                           draggable
-                          onDragOver={() => handleHoverOver(index)}
-                          onDragStart={(e) => {
-                            if (widget === "C-CX") {
-                              handleOnDragWidgetD(e, "C-CX");
-                              setPositionControllWidget(quantenbit.id);
-                            }
-                            if (widget === "C-CCX") {
-                              handleOnDragWidgetD(e, "C-CCX");
-                              setPositionControllWidget(quantenbit.id);
-                            }
-                            if (widget === "C-CZ") {
-                              handleOnDragWidgetD(e, "C-CZ");
-                              setPositionControllWidget(quantenbit.id);
-                            }
-                            if (widget === "C-CCZ") {
-                              handleOnDragWidgetD(e, "C-CCZ");
-                              setPositionControllWidget(quantenbit.id);
-                            }
-                          }}
+                          onDragStart={(e) => handleOnDrag(e, "CX")}
                         >
-                          {widget !== "×" &&
-                            widget !== "C-CX" &&
-                            widget !== "C-CCX" &&
-                            widget !== "C-CZ" &&
-                            widget !== "C-CCZ" && (
+                          CX
+                        </div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "CCX")}
+                        >
+                          CCX
+                        </div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "Z")}
+                        >
+                          Z
+                        </div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "CZ")}
+                        >
+                          CZ
+                        </div>
+                        <div
+                          className="widget"
+                          draggable
+                          onDragStart={(e) => handleOnDrag(e, "CCZ")}
+                        >
+                          CCZ
+                        </div>
+                      </div>
+                    </div>
+                    <div className="quantenbits">
+                      {quantenbits.map((quantenbit, index) => (
+                        <div key={quantenbit.id}>
+                          <div
+                            className="dropZoneForGatter"
+                            onDrop={(event) => handleOnDrop(event, index)}
+                            onDragOver={handleDragOver}
+                          >
+                            {quantenbit.id !== 1 && (
                               <button
-                                className="buttonWidgets"
                                 onClick={() => {
-                                  handleDeleteWidget(
-                                    index,
-                                    quantenbit.id,
-                                    widget
-                                  );
+                                  handleDeleteQuantenbit(quantenbit.id);
                                   reset();
                                 }}
                               >
                                 X
                               </button>
                             )}
-                          {widget}
+                            Quantenbit {index}
+                            {quantenbit.widgets.map((widget, index) => (
+                              <div
+                                className="dropped-widget"
+                                key={index}
+                                draggable
+                                onDragOver={() => handleHoverOver(index)}
+                                onDragStart={(e) => {
+                                  if (widget === "C-CX") {
+                                    handleOnDragWidgetD(e, "C-CX");
+                                    setPositionControllWidget(quantenbit.id);
+                                  }
+                                  if (widget === "C-CCX") {
+                                    handleOnDragWidgetD(e, "C-CCX");
+                                    setPositionControllWidget(quantenbit.id);
+                                  }
+                                  if (widget === "C-CZ") {
+                                    handleOnDragWidgetD(e, "C-CZ");
+                                    setPositionControllWidget(quantenbit.id);
+                                  }
+                                  if (widget === "C-CCZ") {
+                                    handleOnDragWidgetD(e, "C-CCZ");
+                                    setPositionControllWidget(quantenbit.id);
+                                  }
+                                }}
+                              >
+                                {widget !== "×" &&
+                                  widget !== "C-CX" &&
+                                  widget !== "C-CCX" &&
+                                  widget !== "C-CZ" &&
+                                  widget !== "C-CCZ" && (
+                                    <button
+                                      className="buttonWidgets"
+                                      onClick={() => {
+                                        handleDeleteWidget(
+                                          index,
+                                          quantenbit.id,
+                                          widget
+                                        );
+                                        reset();
+                                      }}
+                                    >
+                                      X
+                                    </button>
+                                  )}
+                                {widget}
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       ))}
+                      <div>
+                        <button
+                          onClick={() => {
+                            setQuantenbits([
+                              ...quantenbits,
+                              {
+                                id: count + 1,
+                                widgets: [
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                  "×",
+                                ],
+                              },
+                            ]);
+                            setCount(count + 1);
+                            reset();
+                          }}
+                        >
+                          neues Quantenbit hinzufügen
+                        </button>
+                      </div>
                     </div>
                   </div>
-                ))}
-                <div>
-                  <button
-                    onClick={() => {
-                      setQuantenbits([
-                        ...quantenbits,
-                        {
-                          id: count + 1,
-                          widgets: [
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                            "×",
-                          ],
-                        },
-                      ]);
-                      setCount(count + 1);
-                      reset();
-                    }}
-                  >
-                    neues Quantenbit hinzufügen
-                  </button>
                 </div>
-              </div>
-            </div>
-          </div>
+
+      </div>
+      <div className="content">
+        <div className="left">
+
           <div className="elemente">
             <Measurement
               elemente={quantenbits}
