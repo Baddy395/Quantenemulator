@@ -27,11 +27,8 @@ const Emulator = () => {
         "×",
         "×",
         "×",
-        "×",
-                "×",
-                "×",
-                "×",
-                "×",
+
+
       ],
     },
   ]);
@@ -335,6 +332,7 @@ const Emulator = () => {
                           >
                             {quantenbit.id !== 1 && (
                               <button
+                                className="buttonQuantenbit"
                                 onClick={() => {
                                   handleDeleteQuantenbit(quantenbit.id);
                                   reset();
@@ -415,11 +413,8 @@ const Emulator = () => {
                                           "×",
                                           "×",
                                           "×",
-                                          "×",
-                                                  "×",
-                                                  "×",
-                                                  "×",
-                                                  "×",
+
+
                                 ],
                               },
                             ]);
