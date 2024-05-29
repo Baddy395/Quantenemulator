@@ -55,49 +55,15 @@ const Algorithmen = () => {
     reset();
   };
 
-  const onClickGrover2Suchzustand0 = () => {
-    setQuantenbits(Grover2Qubits(0));
-    reset();
+  const onClickGrover2Suchzustand = (konfiguration: number) => {
+      setQuantenbits(Grover2Qubits(konfiguration));
+      reset();
   };
 
-  const onClickGrover2Suchzustand1 = () => {
-    setQuantenbits(Grover2Qubits(1));
-    reset();
-  };
-
-  const onClickGrover2Suchzustand2 = () => {
-    setQuantenbits(Grover2Qubits(2));
-    reset();
-  };
-
-  const onClickGrover3Suchzustand0 = () => {
-    setQuantenbits(Grover3Qubits(0));
-    reset();
-  };
-  const onClickGrover3Suchzustand1 = () => {
-    setQuantenbits(Grover3Qubits(1));
-    reset();
-  };
-  const onClickGrover3Suchzustand2 = () => {
-    setQuantenbits(Grover3Qubits(2));
-    reset();
-  };
-  const onClickGrover3Suchzustand3 = () => {
-    setQuantenbits(Grover3Qubits(3));
-    reset();
-  };
-  const onClickGrover3Suchzustand4 = () => {
-    setQuantenbits(Grover3Qubits(4));
-    reset();
-  };
-  const onClickGrover3Suchzustand5 = () => {
-    setQuantenbits(Grover3Qubits(5));
-    reset();
-  };
-  const onClickGrover3Suchzustand6 = () => {
-    setQuantenbits(Grover3Qubits(6));
-    reset();
-  };
+  const onClickGrover3Suchzustand = (konfiguration: number) => {
+        setQuantenbits(Grover3Qubits(konfiguration));
+        reset();
+    };
 
   const onClickGrover3 = () => {
     setGrover2(false);
@@ -186,25 +152,25 @@ const Algorithmen = () => {
                 ))}
                 {isGrover3 && (
                   <div>
-                    <button onClick={() => onClickGrover3Suchzustand0()}>
+                    <button onClick={() => onClickGrover3Suchzustand(0)}>
                       Suchzustand: 000
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand1()}>
+                    <button onClick={() => onClickGrover3Suchzustand(1)}>
                       Suchzustand: 001
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand2()}>
+                    <button onClick={() => onClickGrover3Suchzustand(2)}>
                       Suchzustand: 010
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand3()}>
+                    <button onClick={() => onClickGrover3Suchzustand(3)}>
                       Suchzustand: 011
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand4()}>
+                    <button onClick={() => onClickGrover3Suchzustand(4)}>
                       Suchzustand: 100
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand5()}>
+                    <button onClick={() => onClickGrover3Suchzustand(5)}>
                       Suchzustand: 101
                     </button>
-                    <button onClick={() => onClickGrover3Suchzustand6()}>
+                    <button onClick={() => onClickGrover3Suchzustand(6)}>
                       Suchzustand: 110
                     </button>
                     <button onClick={() => onClickGrover3()}>
@@ -214,13 +180,13 @@ const Algorithmen = () => {
                 )}
                 {isGrover2 && (
                   <div>
-                    <button onClick={() => onClickGrover2Suchzustand0()}>
+                    <button onClick={() => onClickGrover2Suchzustand(0)}>
                       Suchzustand: 00
                     </button>
-                    <button onClick={() => onClickGrover2Suchzustand1()}>
+                    <button onClick={() => onClickGrover2Suchzustand(1)}>
                       Suchzustand: 01
                     </button>
-                    <button onClick={() => onClickGrover2Suchzustand2()}>
+                    <button onClick={() => onClickGrover2Suchzustand(2)}>
                       Suchzustand: 10
                     </button>
                     <button onClick={() => onClickGrover2()}>

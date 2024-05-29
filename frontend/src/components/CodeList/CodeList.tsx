@@ -16,19 +16,19 @@ const CodeListe = ({ quantenbits }: CodeListProps) => {
     for (let j = 0; j < quantenbits.length; j++) {
       switch (quantenbits[j].widgets[i]) {
         case "H":
-          temp.push("# Add a Hadamard Gate to the qubit");
+          temp.push("# Hadamard-Gatter");
           temp.push("circuit.append(cirq.H(" + j + "))");
           break;
 
         case "X":
-          temp.push("# Add a Pauli X Gate to the qubit");
+          temp.push("# Pauli-X-Gatter");
           temp.push("circuit.append(cirq.X(" + j + "))");
           break;
 
         case "CX":
           for (let k = 0; k < quantenbits.length; k++) {
             if (quantenbits[k].widgets[i] === "C-CX") {
-              temp.push("# Add a Controlled Not Gate to the qubit");
+              temp.push("# Controlled-NOT-Gatter");
               temp.push("circuit.append(cirq.CNOT(" + k + ", " + j + "))");
             }
           }
@@ -45,7 +45,7 @@ const CodeListe = ({ quantenbits }: CodeListProps) => {
               counterCCX++;
             }
             if (quantenbits[k].widgets[i] === "C-CCX" && counterCCX == 2) {
-              temp.push("# Add a Controlled Controlled Not Gate to the qubit");
+              temp.push("# Controlled-Controlled-NOT-Gatter");
               temp.push(
                 "circuit.append(cirq.CCNOT(" +
                   positionCCX +
@@ -60,14 +60,14 @@ const CodeListe = ({ quantenbits }: CodeListProps) => {
           break;
 
         case "Z":
-          temp.push("# Add a Pauli Z Gate to the qubit");
+          temp.push("# Pauli-Z-Gatter");
           temp.push("circuit.append(cirq.Z(" + j + "))");
           break;
 
         case "CZ":
           for (let k = 0; k < quantenbits.length; k++) {
             if (quantenbits[k].widgets[i] === "C-CZ") {
-              temp.push("# Add a Controlled Z Gate to the qubit");
+              temp.push("# Controlled-Z-Gatter");
               temp.push("circuit.append(cirq.CZ(" + k + ", " + j + "))");
             }
           }
@@ -84,7 +84,7 @@ const CodeListe = ({ quantenbits }: CodeListProps) => {
               counterCCZ++;
             }
             if (quantenbits[k].widgets[i] === "C-CCZ" && counterCCZ == 2) {
-              temp.push("# Add a Controlled Controlled Z Gate to the qubit");
+              temp.push("# Controlled-Controlled-Z-Gatter");
               temp.push(
                 "circuit.append(cirq.CCZ(" +
                   positionCCZ +
@@ -130,7 +130,7 @@ const CodeListe = ({ quantenbits }: CodeListProps) => {
         qubits.append(cirq.LineQubit(quantenbit))
         <br />
         <br />
-        # Adding Gates to the Circuit
+        # Einsetzen der Gatter in Schaltkreis
         <br />
         {temp.map((element) => (
           <div>{element}</div>

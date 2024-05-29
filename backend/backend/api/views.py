@@ -7,11 +7,8 @@ import numpy as np
 import json
 
 
-
-
 @api_view(["POST"])
 def api_home(request, *args, **kwargs):
-    print(request.data)
     quantenbits = request.data[0]
     wiederholungen = int(request.data[1])
 
@@ -78,7 +75,7 @@ def api_home(request, *args, **kwargs):
                     position = 0               
 
     
-    # Wahrscheinlichkeiten der Amplituden beschaffen, bevor eine messung stattfindet
+    # Wahrscheinlichkeiten der Amplituden beschaffen, bevor eine Messung stattfindet
     resultPropabilities = s.simulate(circuit)     
     state_vector = resultPropabilities.final_state_vector
     probabilities = [float(prob) for prob in np.abs(state_vector)**2]
@@ -87,19 +84,13 @@ def api_home(request, *args, **kwargs):
 
     }
 
-    print(json_data)
-
-
-
     # For sampling, we need to add a measurement at the end
     circuit.append(cirq.measure(qubits,  key='result'))  
     
     # Sample the circuit
     result = s.run(circuit, repetitions=wiederholungen)
     counts = result.histogram(key='result')
-    
 
-    
     return JsonResponse({
         "result": counts,
         "probabilities": json_data,
