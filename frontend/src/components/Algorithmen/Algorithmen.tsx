@@ -19,21 +19,26 @@ const Algorithmen = () => {
     },
   ]);
 
+
   const [seed, setSeed] = useState(1);
   const [selectedOption, setSelectedOption] = useState("1000");
 
   const [isGrover2, setGrover2] = useState(false);
   const [isGrover3, setGrover3] = useState(false);
 
+
+  //Methode, für die Auswahl, wie oft die Messung durchgeführt wird
   const handleDropdownChange = (event: any) => {
     setSelectedOption(event.target.value);
     setSeed(Math.random());
   };
 
+  //Methode, um die Elemente auf der Seite neu zu laden
   const reset = () => {
     setSeed(Math.random());
   };
 
+  //liefert den Quantenschaltkreis des EPR-Paars
   const onClickEPR = () => {
     let temp = [
       { id: 1, widgets: ["×", "×"] },
@@ -49,27 +54,19 @@ const Algorithmen = () => {
     reset();
   };
 
-  const onClickGrover2 = () => {
-    setQuantenbits(Grover2Qubits(-1));
+  //liefert default Quantenschaltkreis des Grover-Algorithmus mit zwei Quantenbits
+  const onClickGrover2 = (konfiguration: number) => {
+    setQuantenbits(Grover2Qubits(konfiguration));
     setGrover2(true);
     setGrover3(false);
     reset();
   };
 
-  const onClickGrover2Suchzustand = (konfiguration: number) => {
-      setQuantenbits(Grover2Qubits(konfiguration));
-      reset();
-  };
-
-  const onClickGrover3Suchzustand = (konfiguration: number) => {
-        setQuantenbits(Grover3Qubits(konfiguration));
-        reset();
-    };
-
-  const onClickGrover3 = () => {
+  //liefert default Quantenschaltkreis des Grover-Algorithmus mit drei Quantenbits
+  const onClickGrover3 = (konfiguration: number) => {
     setGrover2(false);
     setGrover3(true);
-    setQuantenbits(Grover3Qubits(-1));
+    setQuantenbits(Grover3Qubits(konfiguration));
     reset();
   };
 
@@ -127,12 +124,12 @@ const Algorithmen = () => {
                     <button onClick={() => onClickEPR()}>EPR - Paar</button>
                   </div>
                   <div>
-                    <button onClick={() => onClickGrover2()}>
+                    <button onClick={() => onClickGrover2(-1)}>
                       Grover - 2 Qubits
                     </button>
                   </div>
                   <div>
-                    <button onClick={() => onClickGrover3()}>
+                    <button onClick={() => onClickGrover3(-1)}>
                       Grover - 3 Qubits
                     </button>
                   </div>
@@ -164,28 +161,28 @@ const Algorithmen = () => {
                 {isGrover3 && (
                   <div>
                     <div>
-                                        <button onClick={() => onClickGrover3Suchzustand(0)}>
+                                        <button onClick={() => onClickGrover3(0)}>
                                           Suchzustand: 000
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(1)}>
+                                        <button onClick={() => onClickGrover3(1)}>
                                           Suchzustand: 001
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(2)}>
+                                        <button onClick={() => onClickGrover3(2)}>
                                           Suchzustand: 010
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(3)}>
+                                        <button onClick={() => onClickGrover3(3)}>
                                           Suchzustand: 011
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(4)}>
+                                        <button onClick={() => onClickGrover3(4)}>
                                           Suchzustand: 100
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(5)}>
+                                        <button onClick={() => onClickGrover3(5)}>
                                           Suchzustand: 101
                                         </button>
-                                        <button onClick={() => onClickGrover3Suchzustand(6)}>
+                                        <button onClick={() => onClickGrover3(6)}>
                                           Suchzustand: 110
                                         </button>
-                                        <button onClick={() => onClickGrover3()}>
+                                        <button onClick={() => onClickGrover3(-1)}>
                                           Suchzustand: 111
                                         </button>
                                       </div>
@@ -203,16 +200,16 @@ const Algorithmen = () => {
                 {isGrover2 && (
                   <div>
                     <div>
-                                        <button onClick={() => onClickGrover2Suchzustand(0)}>
+                                        <button onClick={() => onClickGrover2(0)}>
                                           Suchzustand: 00
                                         </button>
-                                        <button onClick={() => onClickGrover2Suchzustand(1)}>
+                                        <button onClick={() => onClickGrover2(1)}>
                                           Suchzustand: 01
                                         </button>
-                                        <button onClick={() => onClickGrover2Suchzustand(2)}>
+                                        <button onClick={() => onClickGrover2(2)}>
                                           Suchzustand: 10
                                         </button>
-                                        <button onClick={() => onClickGrover2()}>
+                                        <button onClick={() => onClickGrover2(-1)}>
                                           Suchzustand: 11
                                         </button>
                                       </div>

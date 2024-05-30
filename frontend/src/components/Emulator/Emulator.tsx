@@ -43,19 +43,21 @@ const Emulator = () => {
 
   const [selectedOption, setSelectedOption] = useState("1000");
 
+  //Messung wird neu ausgeführt
   const reset = () => {
     setSeed(Math.random());
   };
 
+  //Auswahl der Anzahl, wie oft die Messung durchgeführt werden soll
   const handleDropdownChange = (event: any) => {
     setSelectedOption(event.target.value);
     setSeed(Math.random());
   };
 
+  //führt die Positionierung der Quantengatter innerhalb der Quantenbitlinien durch
   function widgetPosition(widgetType: string, index: number) {
     if (widgetType === "CX") {
       if (quantenbits.length > 1) {
-        console.log("Geht hier rein");
         if (position >= 0) {
           for (let i = 0; i < quantenbits.length; i++) {
             if (quantenbits[i].widgets[position] === "×" && i !== index) {
@@ -131,6 +133,7 @@ const Emulator = () => {
     }
   }
 
+  //Drag and Drop Methoden
   function handleOnDrag(e: React.DragEvent, widgetType: string) {
     e.dataTransfer.setData("widgetType", widgetType);
   }
@@ -162,10 +165,12 @@ const Emulator = () => {
     e.preventDefault();
   }
 
+  //merkt sich die Position, über die die Maus fährt
   const handleHoverOver = (element: any) => {
     setPosition(element);
   };
 
+  //löschen der Quantengatter im Quantenschaltkreis
   const handleDeleteWidget = (
     widgetId: number,
     quantenbitId: number,
@@ -219,6 +224,7 @@ const Emulator = () => {
     }
   };
 
+  //löschen der hinzugefügten Quantenbits
   const handleDeleteQuantenbit = (quantenbitId: number) => {
     setQuantenbits(
       quantenbits.filter((quantenbit) => quantenbit.id !== quantenbitId)

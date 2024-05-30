@@ -19,6 +19,7 @@ const Measurement = ({ elemente, radius, wiederholungen }: MeasurementProp) => {
 
   const test = [elemente, wiederholungen];
 
+  //HTTP POST Request, um Daten an das Backend zu übermitteln und dadurch Messergebnisse zu erhalten
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,28 +45,29 @@ const Measurement = ({ elemente, radius, wiederholungen }: MeasurementProp) => {
     fetchData();
   }, []);
 
+  //automatisierte Definition der Zustände
   function zustandDefinieren(length: number) {
     let temp = [];
-    let x = "";
+    let zustaende = "";
     let elemente = [];
     for (let j = 0; j < length; j++) {
-      x += "0";
+      zustaende += "0";
     }
-    let position = x.length - 1;
+    let position = zustaende.length - 1;
     for (let i = 0; i < Math.pow(2, length); i++) {
-      elemente.push(x);
-      if (x.charAt(position) === "0") {
-        temp = x.split("");
+      elemente.push(zustaende);
+      if (zustaende.charAt(position) === "0") {
+        temp = zustaende.split("");
         temp.splice(position, 1, "1");
-        x = temp.join("");
+        zustaende = temp.join("");
       } else {
         let count = 0;
-        while (x.charAt(position) === "1") {
+        while (zustaende.charAt(position) === "1") {
           count++;
           position--;
         }
 
-        temp = x.split("");
+        temp = zustaende.split("");
         for (let k = 0; k <= count; k++) {
           if (temp[position] == "0") {
             temp.splice(position, 1, "1");
@@ -75,7 +77,7 @@ const Measurement = ({ elemente, radius, wiederholungen }: MeasurementProp) => {
           position++;
         }
         position--;
-        x = temp.join("");
+        zustaende = temp.join("");
       }
     }
     return elemente;

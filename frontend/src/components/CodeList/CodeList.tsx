@@ -9,6 +9,8 @@ interface CodeListProps {
   quantenbits: Quantenbit[];
 }
 
+
+//liefert den Programmcode für die hinzugefügten Quantengatter
 const CodeListe = ({ quantenbits }: CodeListProps) => {
   let temp: string[] = [];
 
