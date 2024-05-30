@@ -178,9 +178,8 @@ const Measurement = ({ elemente, radius, wiederholungen }: MeasurementProp) => {
       <br></br>
       <div className="messung">
         <p>
-          Eine Messung der Quantenbits des oben erzeugten Schaltbilds erfolgt
-          duch einen lokalen Simulator. Hierbei handelt es sich um einen
-          Quantencomputer, der auf einer von-Neumann-Architektur simuliert wird.
+          Eine Messung der Quantenbits des oben erzeugten Quantenschaltkreises erfolgt
+          duch einen Quantencomputer, der auf einer von-Neumann-Architektur simuliert wird.
           <br></br>
           Wenn man mit der Maus über die Balken fährt, erhält man Informationen
           darüber, wie oft der Zustand bei der Messung eingetroffen wurde.

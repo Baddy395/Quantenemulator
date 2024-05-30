@@ -45,6 +45,7 @@ const Algorithmen = () => {
     temp[1].widgets[1] = "CX";
     setQuantenbits(temp);
     setGrover2(false);
+    setGrover3(false);
     reset();
   };
 
@@ -150,48 +151,80 @@ const Algorithmen = () => {
                     </div>
                   </div>
                 ))}
+                {!isGrover2 && !isGrover3 && (
+                    <div>
+                        Der Algorithmus des EPR-Paars liefert ein Beispiel, wie man einen verschränkten Zustand zwischen zwei Quantenbits erzeugen kann.
+                        <br></br>
+                        Dies kann auch den Wahrscheinlichkeiten der Zustandskombinationen oder dem Balkendiagramm entnommen werden.
+                    </div>
+
+
+
+                )}
                 {isGrover3 && (
                   <div>
-                    <button onClick={() => onClickGrover3Suchzustand(0)}>
-                      Suchzustand: 000
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(1)}>
-                      Suchzustand: 001
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(2)}>
-                      Suchzustand: 010
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(3)}>
-                      Suchzustand: 011
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(4)}>
-                      Suchzustand: 100
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(5)}>
-                      Suchzustand: 101
-                    </button>
-                    <button onClick={() => onClickGrover3Suchzustand(6)}>
-                      Suchzustand: 110
-                    </button>
-                    <button onClick={() => onClickGrover3()}>
-                      Suchzustand: 111
-                    </button>
+                    <div>
+                                        <button onClick={() => onClickGrover3Suchzustand(0)}>
+                                          Suchzustand: 000
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(1)}>
+                                          Suchzustand: 001
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(2)}>
+                                          Suchzustand: 010
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(3)}>
+                                          Suchzustand: 011
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(4)}>
+                                          Suchzustand: 100
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(5)}>
+                                          Suchzustand: 101
+                                        </button>
+                                        <button onClick={() => onClickGrover3Suchzustand(6)}>
+                                          Suchzustand: 110
+                                        </button>
+                                        <button onClick={() => onClickGrover3()}>
+                                          Suchzustand: 111
+                                        </button>
+                                      </div>
+                                      <div>
+                                        Dies ist ein Quantenschaltkreis für den Grover-Algorithmus, der drei Quantenbits enthält. Der Grover-Algorithmus
+                                        sucht ein Element innerhalb einer unsortierten Datenbank. Dieses gesuchte Element kann durch die Buttonauswahl
+                                        verändert werden. Der Grover-Algorithmus besteht aus drei Teilen. Der erste Teil versetzt alle Quantenbits in
+                                        eine Superposition. Der zweite Teil ist das Quantenorakel. Die Aufgabe eines solchen Orakels ist es, das gesuchte Element
+                                        zu kennzeichnen. Der dritte Teil verstärkt die Wahrscheinlichkeit des gesuchten Elements. Das Quantenorakel und der Verstärker
+                                        ergeben kombiniert eine sog. Grover-Iteration. Diese muss je nach Anzahl der Quantenbits für eine bestimmte Anzahl wiederholt
+                                        werden. Für mehr Informationen, <a href="https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/grovers-algorithm" target="_blank">einfach hier klicken</a>.
+                                      </div>
                   </div>
                 )}
                 {isGrover2 && (
                   <div>
-                    <button onClick={() => onClickGrover2Suchzustand(0)}>
-                      Suchzustand: 00
-                    </button>
-                    <button onClick={() => onClickGrover2Suchzustand(1)}>
-                      Suchzustand: 01
-                    </button>
-                    <button onClick={() => onClickGrover2Suchzustand(2)}>
-                      Suchzustand: 10
-                    </button>
-                    <button onClick={() => onClickGrover2()}>
-                      Suchzustand: 11
-                    </button>
+                    <div>
+                                        <button onClick={() => onClickGrover2Suchzustand(0)}>
+                                          Suchzustand: 00
+                                        </button>
+                                        <button onClick={() => onClickGrover2Suchzustand(1)}>
+                                          Suchzustand: 01
+                                        </button>
+                                        <button onClick={() => onClickGrover2Suchzustand(2)}>
+                                          Suchzustand: 10
+                                        </button>
+                                        <button onClick={() => onClickGrover2()}>
+                                          Suchzustand: 11
+                                        </button>
+                                      </div>
+                                      <div>
+                                                                              Dies ist ein Quantenschaltkreis für den Grover-Algorithmus, der zwei Quantenbits enthält. Der Grover-Algorithmus
+                                                                              sucht ein Element innerhalb einer unsortierten Datenbank. Dieses gesuchte Element kann durch die Buttonauswahl
+                                                                              verändert werden. Der Grover-Algorithmus besteht aus drei Teilen. Der erste Teil versetzt alle Quantenbits in
+                                                                              eine Superposition. Der zweite Teil ist das Quantenorakel. Die Aufgabe eines solchen Orakels ist es, das gesuchte Element
+                                                                              zu kennzeichnen. Der dritte Teil verstärkt die Wahrscheinlichkeit des gesuchten Elements. Das Quantenorakel und der Verstärker
+                                                                              ergeben kombiniert eine sog. Grover-Iteration. Diese muss je nach Anzahl der Quantenbits für eine bestimmte Anzahl wiederholt
+                                                                              werden. Für mehr Informationen, <a href="https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/grovers-algorithm" target="_blank">einfach hier klicken</a>.
+                                                                            </div>
                   </div>
                 )}
               </div>

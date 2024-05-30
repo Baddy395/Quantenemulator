@@ -257,12 +257,30 @@ const Emulator = () => {
                   <div>
                     Hier befinden sich die Quantengatter. Diese können per drag and
                     drop in die Markierungen gezogen werden.<br></br>H = Hadamard
-                    Gatter<br></br>X = Pauli - X - Gatter<br></br>CNOT bzw. CX =
-                    Controlled Not Gatter (C-CX = Steuerqubit)
-                    <br></br>CCNOT bzw. CCX = Controlled Controlled Not Gatter (C-CCX
+                    Gatter<br></br>X = Pauli - X - Gatter<br></br><br></br>CNOT bzw. CX =
+                    Controlled Not Gatter (C-CX = Steuerqubit) | Wenn dieses Gatter
+                    ausgewählt wurde, zieht man diese in den Quantenschaltkreis. Dies
+                    führt dazu, dass die Position des Zielqubits ausgewählt wird. Die
+                    Steuerqubits positionieren sich in die leeren Plätze innerhalb der
+                    ausgewählten Spalte. Sollte die freien Plätze nicht für die Steuerqubits
+                    ausreichen, wird das Quantengatter nicht in den Quantenschaltkreis positioniert.
+                    Dies gilt für alle Controlled-Gatter.
+                    <br></br><br></br>CCNOT bzw. CCX = Controlled Controlled Not Gatter (C-CCX
                     = Steuerqubits)<br></br>Z = Pauli - Z - Gatter<br></br>CZ =
                     Controlled Z Gatter (C-CZ = Steuerqubit)<br></br>
                     CCZ = Controlled Controlled Z Gatter (C-CCZ = Steuerqubits)
+                  </div>
+                  <br></br>
+                  <div>
+                    Wenn die Quantengatter in den Quantenschaltkreis gezogen wurden, können
+                    diese durch den Löschbutton an dem Gatter wieder entfernt werden. <br></br>
+                    Die einzige Ausnahme sind die Steuerqubits eines Controlled-Gatters. Diese werden
+                    entfernt, wenn das entsprechende Zielqubit gelöscht wird. Auch die Position der
+                    Steuerqubits kann innerhalb der Spalte frei bestimmt werden, indem das
+                    ausgewählte Steuerqubit per drag and drop in die gewünschte Position platziert wird.
+
+
+
                   </div>
                   <br></br>
                   <hr></hr>
